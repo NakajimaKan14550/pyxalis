@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pyxalis: 次世代CMOSイメージセンサ技術</title>
+    <title>Pyxalis: 光の物理限界を突破するCMOS技術</title>
     <style>
         :root {
             --primary-dark: #1a252f;
@@ -11,6 +11,7 @@
             --accent-blue: #3498db;
             --light-gray: #f4f7f6;
             --white: #ffffff;
+            --formula-bg: #e3f2fd;
         }
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
@@ -19,21 +20,55 @@
             margin: 0;
             background-color: var(--light-gray);
         }
+
+        /* ヘッダー・ナビゲーション */
+        .nav-bar {
+            background-color: var(--white);
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 40px; /* logo.png のサイズ調整 */
+            width: auto;
+        }
+
         header {
             background: linear-gradient(135deg, var(--primary-dark), #2c3e50);
             color: var(--white);
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
+        .brand-pyx {
+            max-width: 280px; /* pyx.png 用のメインビジュアルサイズ */
+            margin-bottom: 25px;
+        }
+        header h1 {
+            font-size: 2.4em;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
         }
+
+        /* セクションカード */
         .card {
             background: var(--white);
             border-radius: 12px;
-            padding: 40px;
+            padding: 45px;
             margin-bottom: 40px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
@@ -42,60 +77,86 @@
             border-left: 6px solid var(--accent-orange);
             padding-left: 15px;
             margin-top: 0;
+            font-size: 1.7em;
         }
         h3 {
             color: var(--accent-blue);
-            margin-top: 30px;
+            margin-top: 35px;
+            font-size: 1.3em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
         }
-        .highlight-box {
+
+        /* 技術解説パーツ */
+        .formula-box {
+            background: var(--formula-bg);
+            border-left: 4px solid var(--accent-blue);
+            padding: 20px;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .highlight-card {
             background: #fff8e1;
             border: 1px solid #ffe082;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            margin: 20px 0;
         }
-        .tech-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        .summary-banner {
+            background: #e8f5e9;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 5px solid #4caf50;
+            font-weight: bold;
+            margin-top: 25px;
         }
-        .tag {
-            background: var(--accent-blue);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 25px 0;
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 12px;
+            padding: 15px;
             text-align: left;
         }
-        th {
-            background-color: var(--primary-dark);
-            color: white;
-        }
-        .image-placeholder {
+        th { background-color: var(--primary-dark); color: white; }
+
+        footer {
             text-align: center;
-            margin: 30px 0;
-            padding: 20px;
-            background: #eee;
-            border-radius: 10px;
-            font-style: italic;
-            color: #666;
+            padding: 60px;
+            background-color: var(--primary-dark);
+            color: #bdc3c7;
+        }
+
+        @media (max-width: 768px) {
+            .concept-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 1.8em; }
+            .nav-bar { padding: 10px 20px; }
         }
     </style>
 </head>
 <body>
 
+<nav class="nav-bar">
+    <a href="home" class="logo-link">
+        <img src="logo.png" alt="Home" class="logo-img">
+    </a>
+</nav>
+
 <header>
-    <h1>PYXALIS Special Site</h1>
+    <img src="pyx.png" alt="Pyxalis Identity" class="brand-pyx">
+    <h1>光の物理限界を突破する：<br>超広ダイナミックレンジと極低ノイズの解法</h1>
     <p>高度なCMOS画像センサソリューションで「不可視」を「可視」へ</p>
 </header>
 
@@ -103,43 +164,60 @@
     
     <section class="card">
         <h2>1. Pyxalis (ピクサリス) とは</h2>
-        <p>フランスのモアランを拠点とするピクサリスは、CMOSセンサ開発の精鋭チームが集結したファブレス・サプライヤです。仕様策定から設計、量産までを一貫してサポートし、顧客のニーズに完璧に合致する「カスタムセンサ」に強みを持っています。</p>
-        <div class="tech-tags">
-            <span class="tag">航空宇宙・防衛</span>
-            <span class="tag">医療・バイオ</span>
-            <span class="tag">産業・セキュリティ</span>
-            <span class="tag">シネマ撮影</span>
+        <p>フランスのモアランを拠点とするピクサリスは、CMOSイメージセンサ開発の精鋭チームが集結したファブレス・サプライヤです。航空宇宙、医療、ハイエンド産業機器など、標準的なセンサでは対応不可能な極限性能を求める顧客に対し、カスタムおよび標準ソリューションを提供しています。</p>
+    </section>
+
+    <section class="card">
+        <h2>2. ダイナミックレンジ：100万倍の階調を司る物理学</h2>
+        <p>ダイナミックレンジ（DR）は、センサーが捕捉可能な「最大輝度」と「ノイズ床」の比率です。Pyxalisはこの限界を物理レイヤーで押し広げています。</p>
+
+        <h3>対数表現「dB（デシベル）」の正体</h3>
+        <p>一般的なカメラが60〜70dBであるのに対し、Pyxalisのセンサーが実現する<strong>120dB〜132dB</strong>は、物理的に全く異なる次元の性能を意味します。</p>
+        <div class="formula-box">
+            DR = 20 × log₁₀ ( 最大信号容量 / 読出しノイズ )
+        </div>
+        <p>※ 120dBの実現は、明るさの比率で<strong>1:1,000,000（100万倍）</strong>の差を1フレームで捉える能力を指します。</p>
+
+        
+
+        <div class="concept-grid">
+            <div class="highlight-card">
+                <strong>■ 明るい場所：飽和との戦い</strong>
+                <p>白飛びを防ぐため、HDPYX 300では100ke⁻以上の高い飽和容量を確保。さらに<strong>デュアル・ゲイン（Dual CVF）</strong>により、高輝度時には感度を適正化し情報を残します。</p>
+            </div>
+            <div class="highlight-card">
+                <strong>■ 暗い場所：ノイズの床を削る</strong>
+                <p>読出しノイズを2e⁻ rms以下に抑え込むことで、<strong>1mlux</strong>（肉眼ではほぼ漆黒）の環境下でも被写体を明瞭に可視化します。</p>
+            </div>
+        </div>
+
+        <div class="summary-banner">
+            まとめ：明るい太陽も、その影に隠れた小さな文字も、1回の撮影でどちらもハッキリ見える。これがPyxalisのHDRです。
         </div>
     </section>
 
     <section class="card">
-        <h2>2. 極限の視覚：ハイダイナミックレンジ (HDR)</h2>
-        <p>ダイナミックレンジとは、最も明るい部分から最も暗い部分までの再現範囲。ピクサリスのセンサは最大<strong>120dB〜132dB</strong>という驚異的な数値を実現しています。</p>
-        
-        
-        
-        <h3>なぜHDRが重要なのか？</h3>
-        <ul>
-            <li><strong>車載・防衛:</strong> トンネル出口の爆光と内部の暗所を瞬時に判別。</li>
-            <li><strong>宇宙観測:</strong> 漆黒の宇宙と太陽に照らされた地球を同時に正確にデータ化。</li>
-            <li><strong>工業検査:</strong> 金属の反射（白飛び）と基板の暗部を同時にくっきり描写。</li>
-        </ul>
-        <div class="highlight-box">
-            <strong>ピクサリスの独自技術:</strong> デュアル・ゲイン（Dual CVF）により、明るい場所では感度を抑え、暗い場所では情報を残す、白飛び・黒潰れのない画像を実現します。
-        </div>
-    </section>
+        <h2>3. CDS (相関二重サンプリング)：ノイズを物理的に打ち消す</h2>
+        <p>「極低ノイズ」という仕様の裏側には、<strong>CDS（Correlated Double Sampling）</strong>という緻密なプロセスが存在します。これはセンサーが「光の粒を正確に数える」ための必須の浄化工程です。</p>
 
-    <section class="card">
-        <h2>3. 究極の浄化：CDS (相関二重サンプリング)</h2>
-        <p>画素のリセット時に発生する「リセットノイズ」を物理的な「引き算」で除去する、極低ノイズ実現の鍵です。</p>
+        <h3>CDSの「引き算」アルゴリズム</h3>
+        <p>1つのフレームに対して2回のサンプリングを行い、ノイズ成分を相殺します。</p>
         
         
 
-        <div class="highlight-box" style="text-align: center; font-size: 1.2em; background: #e3f2fd;">
-            <strong>(信号 + ノイズ) - (ノイズ) = 信号のみ</strong>
+        <div class="highlight-card" style="background-color: #e3f2fd; border-color: #bbdefb;">
+            <ol>
+                <li><strong>リセット直後:</strong> 光が入る前の「電圧のバラつき（ノイズのみ）」を記録。</li>
+                <li><strong>信号蓄積後:</strong> 「光の信号 ＋ リセット時のノイズ」を測定。</li>
+                <li><strong>演算処理:</strong> 合計からリセット分を差し引くことで、純粋な信号を抽出。</li>
+            </ol>
+            <div class="formula-box">
+                ( 信号 + ノイズ ) － ( ノイズ ) ＝ 真の信号のみ
+            </div>
         </div>
-        <h3>最新の進化：GS CDS</h3>
-        <p>かつてノイズに不利だったグローバルシャッター（GS）においても、ピクサリスは最新のデジタルCDS技術を導入。ゴルフのインパクトのような一瞬の暗いシーンでも、ノイズに埋もれず鮮明に「時を止める」ことが可能です。</p>
+
+        <h3>現場へのベネフィット</h3>
+        <p><strong>高速撮影（産業検査・ゴルフ解析）:</strong> 露光時間が極端に短いシーンでも、CDSによる浄化でノイズを抑え「一瞬を止める」画質を実現します。また、ノイズの「底」を下げることで、相対的にダイナミックレンジが拡大し、微細な情報を逃しません。</p>
     </section>
 
     <section class="card">
@@ -178,77 +256,9 @@
 
 </div>
 
-<footer style="text-align: center; padding: 40px; color: #7f8c8d;">
+<footer>
     <p>&copy; 2026 Pyxalis Technology Report. All rights reserved.</p>
 </footer>
-
-</body>
-</html>
-
-<section class="tech-section" id="section5">
-        <h2>Section 5. ダイナミックレンジ：100万倍の階調を司る物理学</h2>
-        <p>ダイナミックレンジ（DR）は、センサーが捕捉可能な「最大輝度」と「ノイズ床」の比率を指します。Pyxalisはこの限界を物理レイヤーで押し広げています。</p>
-
-        <h3>1. 対数表現「dB（デシベル）」の正体</h3>
-        <p>光の強度は指数関数的に変化するため、対数スケールが用いられます。一般的なカメラが60〜70dBであるのに対し、Pyxalisのセンサーが実現する<strong>120dB〜132dB</strong>は、物理的に全く異なる次元の性能を意味します。</p>
-        <div class="formula-box">
-            DR = 20 × log₁₀ ( 最大信号容量 / 読出しノイズ )
-        </div>
-        <p>※ 120dBの実現は、明るさの比率で<strong>1:1,000,000（100万倍）</strong>の差を1フレームで捉える能力を指します。</p>
-
-        <div class="concept-grid">
-            <div class="highlight-card">
-                <strong>■ 明るい場所：飽和との戦い</strong>
-                <p>画素が光で溢れる「白飛び」を防ぐため、HDPYX 300では<span class="math">100ke⁻</span>以上の高い飽和容量（Full Well Capacity）を確保。さらに<strong>デュアル・ゲイン（Dual CVF）</strong>により、高輝度時にはあえて感度を抑える最適化経路を形成します。</p>
-            </div>
-            <div class="highlight-card">
-                <strong>■ 暗い場所：ノイズの床を削る</strong>
-                <p>光が極端に少ない環境では、センサー自体の読出しノイズが障壁となります。Pyxalisはこれを<span class="math">< 2e⁻ rms</span>に抑え込むことで、<strong>1mlux</strong>（肉眼ではほぼ漆黒）の環境下でも被写体を明瞭に可視化します。</p>
-            </div>
-        </div>
-
-        <h3>なぜ「HDR」が現場で選ばれるのか</h3>
-        <ul>
-            <li><strong>車載・防衛:</strong> トンネル出口の爆光と内部の暗闇を同時に、かつ瞬時に判別。</li>
-            <li><strong>科学観測:</strong> 宇宙の暗黒と、太陽に照らされた地球の雲の白さを正確にデータ化。</li>
-            <li><strong>工業検査:</strong> 金属の反射光（ハンダ）と黒い基板を同時にくっきり描写。</li>
-        </ul>
-        <div class="summary-banner">
-            まとめ：明るい太陽も、その影に隠れた小さな文字も、1回の撮影でどちらもハッキリ見える。これがPyxalisのHDRです。
-        </div>
-    </section>
-
-    <section class="tech-section" id="section6">
-        <h2>Section 6. CDS (相関二重サンプリング)：ノイズを物理的に打ち消す</h2>
-        <p>「極低ノイズ」という仕様の裏側には、<strong>CDS（Correlated Double Sampling）</strong>という緻密な信号処理プロセスが存在します。これはセンサーが「光の粒を正確に数える」ための必須の浄化工程です。</p>
-
-        <h3>1. リセットノイズの物理的課題</h3>
-        <p>画素は光を電荷に変える前に一度「リセット（空にする）」必要がありますが、この際に熱雑音による電圧のバラつきが生じます。これが画像に「ザラザラ」としたノイズを発生させる真因です。</p>
-
-        <h3>2. CDSの「引き算」アルゴリズム</h3>
-        <p>CDSは、1つのフレームに対して2回のサンプリングを行い、ノイズ成分を相殺します。</p>
-        <div class="highlight-card">
-            <ol>
-                <li><strong>リセット直後:</strong> 光が入る前の「電圧のバラつき（ノイズのみ）」を記録。</li>
-                <li><strong>信号蓄積後:</strong> 「光の信号 ＋ リセット時のノイズ」の合計電圧を測定。</li>
-                <li><strong>演算処理:</strong> 合計からリセット分を差し引くことで、純粋な光信号のみを抽出。</li>
-            </ol>
-            <div class="formula-box">
-                ( 信号 + ノイズ ) － ( ノイズ ) ＝ 真の信号のみ
-            </div>
-        </div>
-
-        
-
-        <h3>3. ビジネス・実用へのインパクト</h3>
-        <ul>
-            <li><strong>高速撮影（ゴルフ解析・マウンタ）:</strong> 露光時間が極端に短いシーンでも、CDSによる浄化でノイズを抑え「一瞬を止める」画質を実現。</li>
-            <li><strong>低照度・科学観測:</strong> ノイズの「底（フロア）」を下げることで、相対的にダイナミックレンジが拡大し、微細な光の情報を逃しません。</li>
-        </ul>
-        <div class="summary-banner">
-            結論：CDSは、あらゆる過酷な環境下で「光の粒」をありのままに数え切るための、ピクサリスが誇る核心技術です。
-        </div>
-    </section>
 
 </body>
 </html>
