@@ -184,3 +184,71 @@
 
 </body>
 </html>
+
+<section class="tech-section" id="section5">
+        <h2>Section 5. ダイナミックレンジ：100万倍の階調を司る物理学</h2>
+        <p>ダイナミックレンジ（DR）は、センサーが捕捉可能な「最大輝度」と「ノイズ床」の比率を指します。Pyxalisはこの限界を物理レイヤーで押し広げています。</p>
+
+        <h3>1. 対数表現「dB（デシベル）」の正体</h3>
+        <p>光の強度は指数関数的に変化するため、対数スケールが用いられます。一般的なカメラが60〜70dBであるのに対し、Pyxalisのセンサーが実現する<strong>120dB〜132dB</strong>は、物理的に全く異なる次元の性能を意味します。</p>
+        <div class="formula-box">
+            DR = 20 × log₁₀ ( 最大信号容量 / 読出しノイズ )
+        </div>
+        <p>※ 120dBの実現は、明るさの比率で<strong>1:1,000,000（100万倍）</strong>の差を1フレームで捉える能力を指します。</p>
+
+        <div class="concept-grid">
+            <div class="highlight-card">
+                <strong>■ 明るい場所：飽和との戦い</strong>
+                <p>画素が光で溢れる「白飛び」を防ぐため、HDPYX 300では<span class="math">100ke⁻</span>以上の高い飽和容量（Full Well Capacity）を確保。さらに<strong>デュアル・ゲイン（Dual CVF）</strong>により、高輝度時にはあえて感度を抑える最適化経路を形成します。</p>
+            </div>
+            <div class="highlight-card">
+                <strong>■ 暗い場所：ノイズの床を削る</strong>
+                <p>光が極端に少ない環境では、センサー自体の読出しノイズが障壁となります。Pyxalisはこれを<span class="math">< 2e⁻ rms</span>に抑え込むことで、<strong>1mlux</strong>（肉眼ではほぼ漆黒）の環境下でも被写体を明瞭に可視化します。</p>
+            </div>
+        </div>
+
+        <h3>なぜ「HDR」が現場で選ばれるのか</h3>
+        <ul>
+            <li><strong>車載・防衛:</strong> トンネル出口の爆光と内部の暗闇を同時に、かつ瞬時に判別。</li>
+            <li><strong>科学観測:</strong> 宇宙の暗黒と、太陽に照らされた地球の雲の白さを正確にデータ化。</li>
+            <li><strong>工業検査:</strong> 金属の反射光（ハンダ）と黒い基板を同時にくっきり描写。</li>
+        </ul>
+        <div class="summary-banner">
+            まとめ：明るい太陽も、その影に隠れた小さな文字も、1回の撮影でどちらもハッキリ見える。これがPyxalisのHDRです。
+        </div>
+    </section>
+
+    <section class="tech-section" id="section6">
+        <h2>Section 6. CDS (相関二重サンプリング)：ノイズを物理的に打ち消す</h2>
+        <p>「極低ノイズ」という仕様の裏側には、<strong>CDS（Correlated Double Sampling）</strong>という緻密な信号処理プロセスが存在します。これはセンサーが「光の粒を正確に数える」ための必須の浄化工程です。</p>
+
+        <h3>1. リセットノイズの物理的課題</h3>
+        <p>画素は光を電荷に変える前に一度「リセット（空にする）」必要がありますが、この際に熱雑音による電圧のバラつきが生じます。これが画像に「ザラザラ」としたノイズを発生させる真因です。</p>
+
+        <h3>2. CDSの「引き算」アルゴリズム</h3>
+        <p>CDSは、1つのフレームに対して2回のサンプリングを行い、ノイズ成分を相殺します。</p>
+        <div class="highlight-card">
+            <ol>
+                <li><strong>リセット直後:</strong> 光が入る前の「電圧のバラつき（ノイズのみ）」を記録。</li>
+                <li><strong>信号蓄積後:</strong> 「光の信号 ＋ リセット時のノイズ」の合計電圧を測定。</li>
+                <li><strong>演算処理:</strong> 合計からリセット分を差し引くことで、純粋な光信号のみを抽出。</li>
+            </ol>
+            <div class="formula-box">
+                ( 信号 + ノイズ ) － ( ノイズ ) ＝ 真の信号のみ
+            </div>
+        </div>
+
+        
+
+        <h3>3. ビジネス・実用へのインパクト</h3>
+        <ul>
+            <li><strong>高速撮影（ゴルフ解析・マウンタ）:</strong> 露光時間が極端に短いシーンでも、CDSによる浄化でノイズを抑え「一瞬を止める」画質を実現。</li>
+            <li><strong>低照度・科学観測:</strong> ノイズの「底（フロア）」を下げることで、相対的にダイナミックレンジが拡大し、微細な光の情報を逃しません。</li>
+        </ul>
+        <div class="summary-banner">
+            結論：CDSは、あらゆる過酷な環境下で「光の粒」をありのままに数え切るための、ピクサリスが誇る核心技術です。
+        </div>
+    </section>
+
+</body>
+</html>
