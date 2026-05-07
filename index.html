@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyxalis - CMOS Image Sensor Solutions</title>
+    <style>
+        :root {
+            --pyx-blue: #3498db;
+            --pyx-orange: #f39c12;
+            --pyx-dark: #2c3e50;
+            --pyx-light: #f8f9fa;
+            --pyx-accent: #e67e22;
+        }
 
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--pyx-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* ヘッダーデザイン */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+
+        .nav-link {
+            color: var(--pyx-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid var(--pyx-blue);
+            padding: 5px 15px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: var(--pyx-blue);
+            color: white;
+        }
+
+        /* ロゴの再現 */
+        .logo-container {
+            text-align: right;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            color: #333;
+            margin: 0;
+        }
+
+        .logo-squares {
+            color: var(--pyx-orange);
+            margin-right: 5px;
+        }
+
+        .logo-tagline {
+            font-size: 10px;
+            color: var(--pyx-blue);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: -5px;
+        }
+
+        /* メインコンテンツ */
+        h1 {
+            font-size: 28px;
+            border-bottom: 4px solid var(--pyx-orange);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--pyx-blue);
+            background: var(--pyx-light);
+            padding: 10px 15px;
+            border-left: 5px solid var(--pyx-accent);
+            margin-top: 40px;
+        }
+
+        .intro-card {
+            background: #fff;
+            border: 1px solid #e1e8ed;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* テーブルデザイン */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        th {
+            background-color: var(--pyx-dark);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background-color: #fcfcfc;
+        }
+
+        /* 技術解説セクション */
+        .tech-box {
+            background-color: #edf7ff;
+            border: 1px solid #d0e7ff;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+            color: #c0392b;
+            display: block;
+            margin: 15px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #95a5a6;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="#" class="nav-link">HOME</a>
+        <div class="logo-container">
+            <p class="logo-text"><span class="logo-squares">■■</span>pyxalis</p>
+            <p class="logo-tagline">Your Image Sensor Solution</p>
+        </div>
+    </header>
+
+    <main>
+        <h1>Pyxalis: CMOSイメージセンサ</h1>
+        
+        <div class="intro-card">
+            <p>フランスのモアランに拠点を置く<strong>Pyxalis（ピクサリス）</strong>は、高度なCMOS画像センサソリューションを提供するデザインハウス兼ファブレスのサプライヤです。2010年に設立され、航空宇宙、医療、産業用などのハイエンド市場に特化しています。</p>
+        </div>
+
+        <h2>1. 主要な市場領域</h2>
+        <ul>
+            <li><strong>航空宇宙・防衛:</strong> 放射線耐性技術を備えた宇宙用センサ。</li>
+            <li><strong>医療・バイオ:</strong> 12インチウェハスケールの大型X線センサ。</li>
+            <li><strong>産業・セキュリティ:</strong> 超高速・高ダイナミックレンジのマシンビジョン。</li>
+        </ul>
+
+        <h2>2. 標準製品ラインナップ</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>センサー名</th>
+                    <th>特徴</th>
+                    <th>主な用途</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>HDPYX 130</strong></td>
+                    <td>132dB HDR, 1.3MP</td>
+                    <td>車載・監視カメラ</td>
+                </tr>
+                <tr>
+                    <td><strong>HDPYX 160/230-G</strong></td>
+                    <td>Global Shutter, 高速</td>
+                    <td>産業用、ITS</td>
+                </tr>
+                <tr>
+                    <td><strong>GIGAPYX 4600</strong></td>
+                    <td>46MP, フルサイズ</td>
+                    <td>シネマ撮影</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. 技術的強み: CDS技術</h2>
+        <div class="tech-box">
+            <p>CDS（相関二重サンプリング）は、リセットノイズを除去し、極低ノイズを実現するための必須技術です。</p>
+            <span class="formula">(信号 + ノイズ) - (ノイズ) = 信号のみ</span>
+            <p>Pyxalisは、グローバルシャッター（GS）においてもデジタルCDS技術を駆使し、高速性と低ノイズを両立させています。</p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Pyxalis Overview. Technical document for image sensor solutions.
+    </footer>
+</div>
+
+</body>
+</html>
