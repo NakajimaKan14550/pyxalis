@@ -38,7 +38,7 @@
             text-decoration: none;
         }
         .logo-img {
-            height: 40px; /* logo.png のサイズ調整 */
+            height: 40px;
             width: auto;
         }
 
@@ -49,7 +49,7 @@
             text-align: center;
         }
         .brand-pyx {
-            max-width: 280px; /* pyx.png 用のメインビジュアルサイズ */
+            max-width: 280px;
             margin-bottom: 25px;
         }
         header h1 {
@@ -130,17 +130,29 @@
             margin-top: 25px;
         }
 
+        /* テーブルスタイル */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 25px 0;
+            background-color: #fff;
         }
         th, td {
             border: 1px solid #ddd;
             padding: 15px;
             text-align: left;
         }
-        th { background-color: var(--primary-dark); color: white; }
+        th { 
+            background-color: var(--primary-dark); 
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
         footer {
             text-align: center;
@@ -153,6 +165,7 @@
             .concept-grid { grid-template-columns: 1fr; }
             header h1 { font-size: 1.8em; }
             .nav-bar { padding: 10px 20px; }
+            .card { padding: 25px; }
         }
     </style>
 </head>
@@ -213,8 +226,6 @@
         <img src="cds.png" alt="CDS (相関二重サンプリング) 動作原理図" class="section-img">
 
         <h3>CDSの「引き算」アルゴリズム</h3>
-        <p>1つのフレームに対して2回のサンプリングを行い、ノイズ成分を相殺します。</p>
-        
         <div class="highlight-card" style="background-color: #e3f2fd; border-color: #bbdefb;">
             <ol>
                 <li><strong>リセット直後:</strong> 光が入る前の「電圧のバラつき（ノイズのみ）」を記録。</li>
@@ -232,36 +243,42 @@
 
     <section class="card">
         <h2>4. 主要製品ラインナップ</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>センサー名</th>
-                    <th>画素数</th>
-                    <th>特徴</th>
-                    <th>主な用途</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>HDPYX 130</td>
-                    <td>1.3MP</td>
-                    <td>132dB HDR, 1mlux照度</td>
-                    <td>車載・監視カメラ</td>
-                </tr>
-                <tr>
-                    <td>HDPYX 230-G</td>
-                    <td>2.3MP</td>
-                    <td>Global Shutter, 160fps</td>
-                    <td>産業用、ITS</td>
-                </tr>
-                <tr>
-                    <td>GIGAPYX 4600</td>
-                    <td>46MP</td>
-                    <td>35mmフルサイズ, BSI</td>
-                    <td>高速シネマ撮影</td>
-                </tr>
-            </tbody>
-        </table>
+        <p>Pyxalisは、さまざまな産業ニーズに対応する高性能センサーを幅広く展開しています。</p>
+
+        <img src="lis.png" alt="Pyxalis 製品ポートフォリオ" class="section-img">
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>センサー名</th>
+                        <th>画素数</th>
+                        <th>特徴</th>
+                        <th>主な用途</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HDPYX 130</td>
+                        <td>1.3MP</td>
+                        <td>132dB HDR, 1mlux照度</td>
+                        <td>車載・監視カメラ</td>
+                    </tr>
+                    <tr>
+                        <td>HDPYX 230-G</td>
+                        <td>2.3MP</td>
+                        <td>Global Shutter, 160fps</td>
+                        <td>産業用、ITS</td>
+                    </tr>
+                    <tr>
+                        <td>GIGAPYX 4600</td>
+                        <td>46MP</td>
+                        <td>35mmフルサイズ, BSI</td>
+                        <td>高速シネマ撮影</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
 </div>
