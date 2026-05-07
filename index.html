@@ -87,6 +87,16 @@
             padding-bottom: 8px;
         }
 
+        /* 画像スタイル */
+        .section-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
         /* 技術解説パーツ */
         .formula-box {
             background: var(--formula-bg);
@@ -178,7 +188,7 @@
         </div>
         <p>※ 120dBの実現は、明るさの比率で<strong>1:1,000,000（100万倍）</strong>の差を1フレームで捉える能力を指します。</p>
 
-        
+        <img src="range.png" alt="ダイナミックレンジ比較概念図" class="section-img">
 
         <div class="concept-grid">
             <div class="highlight-card">
@@ -200,11 +210,11 @@
         <h2>3. CDS (相関二重サンプリング)：ノイズを物理的に打ち消す</h2>
         <p>「極低ノイズ」という仕様の裏側には、<strong>CDS（Correlated Double Sampling）</strong>という緻密なプロセスが存在します。これはセンサーが「光の粒を正確に数える」ための必須の浄化工程です。</p>
 
+        <img src="cds.png" alt="CDS (相関二重サンプリング) 動作原理図" class="section-img">
+
         <h3>CDSの「引き算」アルゴリズム</h3>
         <p>1つのフレームに対して2回のサンプリングを行い、ノイズ成分を相殺します。</p>
         
-        
-
         <div class="highlight-card" style="background-color: #e3f2fd; border-color: #bbdefb;">
             <ol>
                 <li><strong>リセット直後:</strong> 光が入る前の「電圧のバラつき（ノイズのみ）」を記録。</li>
